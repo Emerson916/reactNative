@@ -1,8 +1,56 @@
 import React from 'react';
-
 import {Text, View, FlatList, Image, StyleSheet} from 'react-native';
+import Card from './Card';
 
-const LISTA = [...Array(3).keys()].map(e => 'Titulo ' + e);
+// const LISTA = [...Array(10).keys()].map(e => 'Titulo ' + e);
+
+const LIST = [
+  {
+    id: '1',
+    title: 'Cade o filme do Miles ?',
+    location: 'Nova foto de perfil',
+    imgURI:
+      'https://361605-1208129-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/11/capa-miles-morales.jpg',
+    comments: 'Cade o filme do miles marvel ?',
+  },
+
+  {
+    id: '2',
+    title: 'O melhor anime',
+    location: 'Nova foto de perfil',
+    imgURI: 'https://pbs.twimg.com/media/E4vaWoDWUAYo34I.jpg',
+    comments: 'Show de bola!',
+  },
+
+  {
+    id: '3',
+    title: 'Spider-Man',
+    location: 'Nova foto de perfil',
+    imgURI: 'https://i.redd.it/spolpm8eofd61.jpg',
+    comments: 'Show de bola!',
+  },
+
+  {
+    id: '4',
+    title: 'Spider-Man',
+    location: 'Nova foto de perfil',
+    imgURI: 'https://images8.alphacoders.com/964/964785.png',
+    comments: 'Show de bola!',
+  },
+];
+
+// function mostraCard({item}) {
+//   return (
+//     <View style={styles.post}>
+//       <View style={styles.container_texts}>
+//         <Text style={styles.title}>{item.title}</Text>
+//         <Text style={styles.description}>{item.drescription}</Text>
+//       </View>
+//       <Image style={styles.image} source={{uri: item.img}} />
+//       <Text style={styles.comments_multLines}>{item.comments}</Text>
+//     </View>
+//   );
+// }
 
 const App = () => {
   return (
@@ -18,28 +66,15 @@ const App = () => {
       </View>
 
       <FlatList
-        data={LISTA}
-        renderItem={({item}) => (
-          <View style={styles.post}>
-            <View style={styles.container_texts}>
-              <Text style={styles.title}>{item}</Text>
-              <Text style={styles.description}>
-                Descrição de uma linha inteira
-              </Text>
-            </View>
-            <Image
-              style={styles.image}
-              source={{
-                uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxQga-UeYXzj-_9fGD4sRupK-7IrGjbx_X6w&usqp=CAU',
-              }}
-            />
-            <Text style={styles.comments_multLines}>{item}</Text>
-          </View>
-        )}
+        data={LIST}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => <Card {...item} />}
       />
     </View>
   );
 };
+
+export default App;
 
 const stylesHeader = StyleSheet.create({
   header: {
@@ -62,38 +97,3 @@ const stylesHeader = StyleSheet.create({
     color: '#FFF',
   },
 });
-
-const styles = StyleSheet.create({
-  post: {
-    height: 550,
-    borderBottomWidth: 1,
-    borderColor: '#20232a',
-    marginBottom: 20,
-  },
-
-  container_texts: {
-    height: 80,
-    padding: 20,
-  },
-
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#292929',
-  },
-
-  description: {
-    fontSize: 18,
-    color: '#292929',
-  },
-
-  image: {
-    height: 300,
-  },
-
-  comments_multLines: {
-    fontSize: 20,
-    padding: 20,
-  },
-});
-export default App;
