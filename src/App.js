@@ -1,6 +1,13 @@
 import React from 'react';
-import {Text, View, FlatList, Image, StyleSheet} from 'react-native';
-import Card from './Card';
+import {
+  Text,
+  View,
+  SafeAreaView,
+  FlatList,
+  Image,
+  StyleSheet,
+} from 'react-native';
+import Card from './components/Card/Card';
 
 // const LISTA = [...Array(10).keys()].map(e => 'Titulo ' + e);
 
@@ -19,7 +26,7 @@ const LIST = [
     title: 'O melhor anime',
     location: 'Nova foto de perfil',
     imgURI: 'https://pbs.twimg.com/media/E4vaWoDWUAYo34I.jpg',
-    comments: 'Show de bola!',
+    comments: 'O melhor anime de todos os tempos',
   },
 
   {
@@ -39,22 +46,9 @@ const LIST = [
   },
 ];
 
-// function mostraCard({item}) {
-//   return (
-//     <View style={styles.post}>
-//       <View style={styles.container_texts}>
-//         <Text style={styles.title}>{item.title}</Text>
-//         <Text style={styles.description}>{item.drescription}</Text>
-//       </View>
-//       <Image style={styles.image} source={{uri: item.img}} />
-//       <Text style={styles.comments_multLines}>{item.comments}</Text>
-//     </View>
-//   );
-// }
-
 const App = () => {
   return (
-    <View>
+    <SafeAreaView>
       <View style={stylesHeader.header}>
         <Image
           style={stylesHeader.perfil}
@@ -70,7 +64,7 @@ const App = () => {
         keyExtractor={item => item.id}
         renderItem={({item}) => <Card {...item} />}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
