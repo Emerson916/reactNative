@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
-import IconButton from '../iconButton/iconButton';
+// import IconButton from '../iconButton/iconButton';
 import styles from './styles';
 import heart from '../../assets/card/heart.png';
 import heartOutline from '../../assets/card/heartOutline.png';

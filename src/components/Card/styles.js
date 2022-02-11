@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
   },
 
   iconsFeedback: {
-    height: 40,
-    width: 40,
+    height: 35,
+    width: 35,
     margin: 5,
   },
 
