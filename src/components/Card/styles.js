@@ -2,10 +2,31 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   post: {
-    height: 550,
+    height: 800,
     borderBottomWidth: 1,
     borderColor: '#20232a',
     marginBottom: 20,
+  },
+
+  containerPerfil: {
+    height: 80,
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+  },
+
+  imagePerfil: {
+    height: 50,
+    width: 50,
+    borderRadius: 90,
+    borderWidth: 2,
+    borderColor: '#ff7a8e',
+  },
+
+  name: {
+    fontWeight: 'bold',
+    color: '#000',
+    paddingStart: 10,
   },
 
   container_texts: {
@@ -25,13 +46,13 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    height: 300,
+    height: 400,
   },
 
   iconsFeedback: {
-    height: 35,
-    width: 35,
-    margin: 5,
+    height: 40,
+    width: 40,
+    margin: 10,
   },
 
   containerIcons: {

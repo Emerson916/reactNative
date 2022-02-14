@@ -3,8 +3,6 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   ContainerStories: {
     height: 110,
-    borderBottomWidth: 1,
-    borderColor: '#20232a',
   },
 
   SubContainerStories: {
@@ -17,17 +15,22 @@ const styles = StyleSheet.create({
     width: 55,
     height: 55,
     borderRadius: 90,
+    borderBottomWidth: 1,
+    borderColor: '#20232a',
   },
 
   Image: {
     width: 55,
     height: 55,
-    borderBottomWidth: 10,
-    borderColor: '#266',
     borderRadius: 90,
+    borderWidth: 2,
+    borderColor: '#ff7a8e',
   },
 
-  Name: {},
+  Name: {
+    borderBottomWidth: 2,
+    borderColor: '#292929',
+  },
 });
 
 export default styles;

@@ -8,13 +8,19 @@ import bookmarkOutline from '../../assets/card/bookmarkOutline.png';
 import IconButtonComp from '../IconButton/IconButton';
 // import LottieView from 'lottie-react-native';
 
-const Card = ({title, location, imgURI, comments}) => {
+const Card = ({imgPerfilURI, name, title, location, imgURI, comments}) => {
   const handleImageTouch = cardTitle => {
     console.log('clicando  com o dedo na imagem: ', cardTitle);
   };
 
   return (
     <View style={styles.post}>
+      <View style={styles.containerPerfil}>
+        <TouchableOpacity>
+          <Image style={styles.imagePerfil} source={{uri: imgPerfilURI}} />
+        </TouchableOpacity>
+        <Text style={styles.name}>{name}</Text>
+      </View>
       <View style={styles.container_texts}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.location}>{location}</Text>
