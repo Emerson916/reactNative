@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
-const Stories = ({name, imgURI}) => {
+const Story = ({name, imgURI}) => {
   return (
     <View style={styles.ContainerStories}>
       <View style={styles.SubContainerStories}>
@@ -17,4 +17,4 @@ const Stories = ({name, imgURI}) => {
   );
 };
 
-export default Stories;
+export default Story;

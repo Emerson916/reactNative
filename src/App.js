@@ -1,14 +1,7 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  SafeAreaView,
-  FlatList,
-  Image,
-  StyleSheet,
-} from 'react-native';
-import Card from './components/Card/Card';
-import Stories from './components/Storie/Storie';
+import {SafeAreaView} from 'react-native';
+import Feed from './components/Feed';
+import Header from './components/Header';
 
 // const LISTA = [...Array(10).keys()].map(e => 'Titulo ' + e);
 
@@ -116,58 +109,10 @@ const STORIES = [
 const App = () => {
   return (
     <SafeAreaView>
-      <View style={stylesHeader.header}>
-        <Image
-          style={stylesHeader.icons}
-          source={{uri: 'https://cdn-icons-png.flaticon.com/128/45/45010.png'}}
-        />
-
-        <Text style={stylesHeader.name}>Emerson Silva</Text>
-
-        <Image
-          style={stylesHeader.icons}
-          source={{uri: 'https://cdn-icons-png.flaticon.com/128/54/54641.png'}}
-        />
-      </View>
-
-      <FlatList
-        horizontal
-        data={STORIES}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => <Stories {...item} />}
-      />
-
-      <FlatList
-        data={LIST}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => <Card {...item} />}
-      />
+      <Header />
+      <Feed posts={LIST} stories={STORIES} />
     </SafeAreaView>
   );
 };
 
 export default App;
-
-const stylesHeader = StyleSheet.create({
-  header: {
-    height: 60,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderColor: '#c2c2c2',
-  },
-
-  icons: {
-    height: 25,
-    width: 25,
-  },
-
-  name: {
-    fontSize: 30,
-    color: '#262626',
-    fontWeight: 'bold',
-    fontFamily: 'cursive',
-  },
-});
