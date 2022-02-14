@@ -8,6 +8,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import Card from './components/Card/Card';
+import Stories from './components/Storie/Storie';
 
 // const LISTA = [...Array(10).keys()].map(e => 'Titulo ' + e);
 
@@ -46,6 +47,50 @@ const LIST = [
   },
 ];
 
+const STORIES = [
+  {
+    id: '1',
+    name: 'Anderson Alcantra',
+    imgURI:
+      'https://361605-1208129-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/11/capa-miles-morales.jpg',
+  },
+
+  {
+    id: '2',
+    name: 'José Marquinhos',
+    imgURI:
+      'https://361605-1208129-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/11/capa-miles-morales.jpg',
+  },
+
+  {
+    id: '3',
+    name: 'Beatriz Ferreira',
+    imgURI:
+      'https://361605-1208129-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/11/capa-miles-morales.jpg',
+  },
+
+  {
+    id: '4',
+    name: 'Beatriz Ferreira',
+    imgURI:
+      'https://361605-1208129-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/11/capa-miles-morales.jpg',
+  },
+
+  {
+    id: '5',
+    name: 'Beatriz Ferreira',
+    imgURI:
+      'https://361605-1208129-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/11/capa-miles-morales.jpg',
+  },
+
+  {
+    id: '6',
+    name: 'Beatriz Ferreira',
+    imgURI:
+      'https://361605-1208129-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/11/capa-miles-morales.jpg',
+  },
+];
+
 const App = () => {
   return (
     <SafeAreaView>
@@ -58,6 +103,13 @@ const App = () => {
         />
         <Text style={stylesHeader.name}>Emerson Silva</Text>
       </View>
+
+      <FlatList
+        horizontal
+        data={STORIES}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => <Stories {...item} />}
+      />
 
       <FlatList
         data={LIST}
