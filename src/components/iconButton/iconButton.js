@@ -1,31 +1,21 @@
-import {View, TouchableOpacity, Image} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import styles from '../Card/styles';
-import heart from '../../assets/card/heart.png';
-import heartOutline from '../../assets/card/heartOutline.png';
-// import bookmark from '../../assets/card/bookmark.png';
-// import bookmarkOutline from '../../assets/card/bookmarkOutline.png';
+import styles from '../IconButton/styles';
 
-const IconButton = () => {
-  const [check, setCheck] = useState(false);
+const IconButtonComp = ({iconSolid, iconOutline}) => {
+  const [checked, setChecked] = useState(false);
 
   const handleChecked = () => {
-    setCheck(!check);
+    setChecked(!checked);
   };
+
   return (
     <View style={styles.containerIcons}>
-      <TouchableOpacity onPress={() => handleChecked()}>
-        <Image
-          style={styles.iconsFeedback}
-          source={!check ? heart : heartOutline}
-        />
-        {/* <Image
-          style={styles.iconsFeedback}
-          source={!check ? {bookmark} : {bookmarkOutline}}
-        /> */}
+      <TouchableOpacity onPress={handleChecked}>
+        {!checked ? iconOutline : iconSolid}
       </TouchableOpacity>
     </View>
   );
 };
 
-export default IconButton;
+export default IconButtonComp;
