@@ -35,7 +35,7 @@ const Card = ({imgPerfilURI, name, title, location, imgURI, comments}) => {
 
       <View style={styles.containerIcons}>
         <IconButtonComp
-          onChange={a => setIcons({...icons, heart: a})}
+          onChange={a => setIcons({...icons, like: a})}
           onLiked={icons}
           iconSolid={<Image style={styles.iconsFeedback} source={heartSolid} />}
           iconOutline={

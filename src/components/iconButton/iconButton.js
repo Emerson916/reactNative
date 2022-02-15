@@ -7,9 +7,10 @@ const IconButtonComp = ({iconSolid, iconOutline, onChange, onLiked}) => {
 
   const handleChecked = () => {
     setChecked(!checked);
-    // onLiked(checked);
     if (!checked) {
-      onChange(!checked);
+      onChange(true);
+    } else {
+      onChange(false);
     }
   };
 
