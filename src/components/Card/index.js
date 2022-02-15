@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import heartSolid from '../../assets/card/heart.png';
@@ -12,6 +12,9 @@ const Card = ({imgPerfilURI, name, title, location, imgURI, comments}) => {
   const handleImageTouch = cardTitle => {
     console.log('clicando  com o dedo na imagem: ', cardTitle);
   };
+
+  //criar um use state com passando um objeto para variavel[{like : true, bookmark: false}]
+  const [icons, setIcons] = useState({like: false, bookmark: false});
 
   return (
     <View style={styles.post}>
@@ -32,12 +35,18 @@ const Card = ({imgPerfilURI, name, title, location, imgURI, comments}) => {
 
       <View style={styles.containerIcons}>
         <IconButtonComp
+          onChange={a => setIcons({...icons, heart: a})}
+          onLiked={icons}
           iconSolid={<Image style={styles.iconsFeedback} source={heartSolid} />}
           iconOutline={
             <Image style={styles.iconsFeedback} source={heartOutline} />
           }
         />
+        <Text>heart : {String(icons.like)} </Text>
+
         <IconButtonComp
+          onChange={b => setIcons({...icons, bookmark: b})}
+          onLiked={icons}
           iconSolid={
             <Image style={styles.iconsFeedback} source={bookmarkOutline} />
           }
@@ -45,6 +54,7 @@ const Card = ({imgPerfilURI, name, title, location, imgURI, comments}) => {
             <Image style={styles.iconsFeedback} source={bookmarkSolid} />
           }
         />
+        <Text>bookmark : {String(icons.bookmark)} </Text>
       </View>
       <Text style={styles.comments}>{comments}</Text>
     </View>

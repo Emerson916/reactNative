@@ -3,7 +3,7 @@ import React from 'react';
 import StoryBar from '../StoryBar';
 import Card from '../Card';
 
-const emptyState =   {
+const emptyState = {
   id: '-1',
   name: 'Puuutz',
   title: 'Nada Aqui',
@@ -11,7 +11,8 @@ const emptyState =   {
   comments: 'Nenhum post disponível',
 };
 
-const Feed = ({posts, stories}) => { // props = {posts: [<lista de posts], stories: [<lista de stories]}
+const Feed = ({posts, stories}) => {
+  // props = {posts: [<lista de posts], stories: [<lista de stories]}
   const postsData = posts ?? [emptyState];
   return (
     <FlatList
