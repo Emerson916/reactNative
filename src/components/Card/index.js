@@ -6,7 +6,6 @@ import heartOutline from '../../assets/card/heartOutline.png';
 import bookmarkSolid from '../../assets/card/bookmark.png';
 import bookmarkOutline from '../../assets/card/bookmarkOutline.png';
 import IconButtonComp from '../IconButton/IconButton';
-// import LottieView from 'lottie-react-native';
 
 const Card = ({imgPerfilURI, name, title, location, imgURI, comments}) => {
   const handleImageTouch = cardTitle => {
@@ -35,8 +34,7 @@ const Card = ({imgPerfilURI, name, title, location, imgURI, comments}) => {
 
       <View style={styles.containerIcons}>
         <IconButtonComp
-          onChange={a => setIcons({...icons, like: a})}
-          onLiked={icons}
+          onChange={likes => setIcons({...icons, like: likes})}
           iconSolid={<Image style={styles.iconsFeedback} source={heartSolid} />}
           iconOutline={
             <Image style={styles.iconsFeedback} source={heartOutline} />
@@ -45,13 +43,12 @@ const Card = ({imgPerfilURI, name, title, location, imgURI, comments}) => {
         <Text>heart : {String(icons.like)} </Text>
 
         <IconButtonComp
-          onChange={b => setIcons({...icons, bookmark: b})}
-          onLiked={icons}
+          onChange={bookmarks => setIcons({...icons, bookmark: bookmarks})}
           iconSolid={
-            <Image style={styles.iconsFeedback} source={bookmarkOutline} />
+            <Image style={styles.iconsFeedback} source={bookmarkSolid} />
           }
           iconOutline={
-            <Image style={styles.iconsFeedback} source={bookmarkSolid} />
+            <Image style={styles.iconsFeedback} source={bookmarkOutline} />
           }
         />
         <Text>bookmark : {String(icons.bookmark)} </Text>

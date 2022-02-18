@@ -10,11 +10,15 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.8",
     "lottie-react-native": "^5.0.1",
     "react": "17.0.2",
     "react-lottie": "^1.2.3",
     "react-native": "0.67.2",
-    "react-native-svg": "^12.1.1"
+    "react-native-double-click-instagram": "^1.0.4",
+    "react-native-screens": "^3.11.1",
+    "react-native-svg": "^12.1.1",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

@@ -2,11 +2,13 @@ import {View, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import styles from '../IconButton/styles';
 
-const IconButtonComp = ({iconSolid, iconOutline, onChange, onLiked}) => {
+const IconButtonComp = ({iconSolid, iconOutline, onChange, iconState}) => {
+  // const [checked, setChecked] = useState(iconState);
   const [checked, setChecked] = useState(false);
 
   const handleChecked = () => {
     setChecked(!checked);
+
     if (!checked) {
       onChange(true);
     } else {
